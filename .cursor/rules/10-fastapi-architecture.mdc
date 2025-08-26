@@ -1,0 +1,28 @@
+---
+description: FastAPI architecture & routing practices for this repo.
+globs:
+  - "app/**/*.py"
+  - "routers/**/*.py"
+  - "api/**/*.py"
+autoAttach: true
+---
+
+**File / Module Structure**
+- Separate exported router(s), sub-routes, utilities, static content, and types (models/schemas).
+- **Modularize routes & handlers by feature/domain** (SRP).
+
+**Functions & Async**
+- Use `def` for pure CPU-bound functions; `async def` for I/O routes and db/external calls.
+- Always annotate return types for route handlers (clear OpenAPI).
+
+**Dependency Injection**
+- Use FastAPI `Depends` to invert dependencies for db sessions, services, clients (DIP).
+- Keep dependencies stateless or clearly scoped.
+
+**Lifespan & Middleware**
+- Prefer **lifespan context managers** over `@app.on_event("startup"/"shutdown")` for startup/shutdown.
+- Use middleware for cross-cutting concerns (logging, tracing, error monitoring).
+
+**HTTP Semantics**
+- Use `HTTPException` for expected errors; define response models for success/error.
+- Keep blocking work off the event loop; push to workers/queues when needed.

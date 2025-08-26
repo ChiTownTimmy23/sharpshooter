@@ -1,0 +1,14 @@
+---
+description: Fail-fast, guard-clause error handling patterns.
+globs:
+  - "**/*.py"
+autoAttach: true
+---
+
+**Error Handling and Validation**
+- Put precondition checks first; **early return** on invalid state.
+- Prefer guard clauses to deep nesting; “happy path” last.
+- Avoid unnecessary `else` after `return`/`raise`.
+- Centralize unexpected error handling and logging via middleware.
+- Use custom exceptions or factories for consistent mapping to HTTP responses.
+- Write minimal, user-friendly messages; log details, not secrets.

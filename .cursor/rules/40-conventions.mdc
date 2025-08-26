@@ -1,0 +1,13 @@
+---
+description: Style & conventions—naming, imports, one-liners, files.
+globs:
+  - "**/*.py"
+autoAttach: true
+---
+
+**Conventions**
+- Lower_snake_case for files/dirs (e.g., `routers/user_routes.py`).
+- Prefer named exports for routers/utilities.
+- Keep simple conditionals one-line (`if cond: do()`); avoid unnecessary braces.
+- Keep examples concise and technical.
+- Track API metrics (latency, throughput); surface them in logs/telemetry.

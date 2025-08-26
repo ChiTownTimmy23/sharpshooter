@@ -1,0 +1,16 @@
+---
+description: Async I/O, caching, serialization, lazy loading, DB efficiency.
+agentRequested: true
+triggers:
+  - "optimize"
+  - "performance"
+  - "slow endpoint"
+  - "latency"
+---
+
+**Performance Optimization**
+- **Avoid blocking I/O** in `async` paths; use async drivers for DB and HTTP.
+- Cache static or hot data (e.g., Redis) with clear TTL/keys; invalidate on writes.
+- Use **Pydantic v2** efficiently (model re-use, `.model_validate` / `.model_dump`).
+- Lazy-load large datasets; paginate/stream large responses.
+- Keep ORMs on SQLAlchemy 2.0 query patterns; measure with APM/metrics.

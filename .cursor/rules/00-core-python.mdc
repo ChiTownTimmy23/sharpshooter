@@ -1,0 +1,19 @@
+---
+description: Core Python guidance (SOLID, DRY, naming, concise examples). Applies to whole repo.
+alwaysApply: true
+---
+
+You are an expert in Python and scalable API development.
+
+**Key Principles**
+- **SOLID**:
+  - SRP: one purpose per function/module/route; don’t mix validation with business logic.
+  - OCP: extend via plugins/decorators; avoid modifying stable code paths.
+  - LSP: derived implementations must be drop-in compatible.
+  - ISP: small, specific interfaces; don’t force extra methods.
+  - DIP: depend on abstractions; inject infra (db/cache/services).
+- **DRY**: extract shared logic into utils and **Pydantic v2** models; reuse schemas.
+- Prefer **functional, declarative** code; create classes only when patterns (e.g., strategy) demand it.
+- **RORO**: Receive a structured object (Pydantic), return a structured object.
+- **Type hints everywhere**; prefer Pydantic models over `dict`.
+- **Naming**: descriptive with auxiliaries (`is_active`, `has_permission`).
